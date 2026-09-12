@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A dark pay-to-unlock calc demo.">
+  <title>Calc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="calc"><span class="brand-mark">+</span><span>calc</span></div>
+    </header>
+    <section class="calc-wrap" aria-label="calc">
+      <div class="calc-card">
+        <div class="calc-head"><span>CALC</span><span class="ready-label"><span class="power-dot"></span> READY</span></div>
+        <div class="display-wrap"><div id="calculation-text" class="expression">0</div><output id="display" class="display" aria-live="polite">0</output><p class="display-hint">Did you know? Calc is short for calculator.</p></div>
+        <div class="keypad" aria-label="calc keys">
+          <button class="key utility" data-action="clear" type="button">AC</button><button class="key utility" data-action="backspace" type="button">DEL</button><button class="key operator" data-value="%" type="button">%</button><button class="key operator" data-value="/" type="button">&#247;</button>
+          <button class="key" data-value="7" type="button">7</button><button class="key" data-value="8" type="button">8</button><button class="key" data-value="9" type="button">9</button><button class="key operator" data-value="*" type="button">&#215;</button>
+          <button class="key" data-value="4" type="button">4</button><button class="key" data-value="5" type="button">5</button><button class="key" data-value="6" type="button">6</button><button class="key operator" data-value="-" type="button">&#8722;</button>
+          <button class="key" data-value="1" type="button">1</button><button class="key" data-value="2" type="button">2</button><button class="key" data-value="3" type="button">3</button><button class="key operator" data-value="+" type="button">+</button>
+          <button class="key wide" data-value="0" type="button">0</button><button class="key" data-value="." type="button">.</button><button class="key equals" data-action="equals" type="button" aria-label="Pay to reveal answer"><span>=</span><small>PAY</small></button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">vibecoded by fisupala</footer>
+  </main>
+  <dialog id="payment-modal" class="payment-modal"><form id="payment-form" class="payment-form" method="dialog"><button id="close-modal" class="close-modal" type="button" aria-label="Close payment window">&#215;</button><span class="panel-kicker">CHECKOUT</span><h1>Unlock your answer</h1><p class="modal-copy">Confirm the $2.00 payment to reveal the answer.</p><label for="card-number">Card number</label><input id="card-number" type="text" inputmode="numeric" autocomplete="off" placeholder="4242 4242 4242 4242" required><div class="small-fields"><div><label for="expiry">Expiry</label><input id="expiry" type="text" inputmode="numeric" autocomplete="off" placeholder="12 / 30" required></div><div><label for="cvc">CVC</label><input id="cvc" type="text" inputmode="numeric" autocomplete="off" placeholder="123" required></div></div><button class="confirm-button" type="submit">Confirm payment <span>$2.00</span></button></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
